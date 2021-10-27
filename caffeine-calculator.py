@@ -1,12 +1,12 @@
-print("*************")
-print("Type 1 for Monster energy")
-print("Type 2 for coffee")
-print("Type 3 for espresso")
-print("*************")
-
 def get_drinks(prompt):
+    print("*************")
+    print("Type 1 for Monster energy")
+    print("Type 2 for coffee")
+    print("Type 3 for espresso")
+    print("*************")
     
     total_caffeine = 0
+    name = ''
     while True:
         try:
             value = int(input(prompt))
@@ -15,11 +15,14 @@ def get_drinks(prompt):
             continue
         if value == 1:
             total_caffeine += 160
+            name = 'Monster'
         if value == 2:
             total_caffeine += 95
+            name = 'coffee'
         if value == 3:
             total_caffeine += 64
-        return total_caffeine
+            name = 'espresso'
+        return total_caffeine, name
 
 def get_amount(prompt):
     while True:
@@ -32,7 +35,13 @@ def get_amount(prompt):
 
 def main():
     fda_total = 400 # Recommended FDA daily intake of caffeine in milligrams (mg)
-    if drink * amt < fda_total:
+    total_mg = drink[0] * amt
+    if amt == 1:
+        print(f"You've drank {amt} {drink[1]} which is {drink[0]}mg of caffeine.")
+    if amt >= 2:
+        print(f"You've drank {amt} {drink[1]}s which is a total of {total_mg}mg's of caffeine.")
+
+    if drink[0] * amt < fda_total:
         print("You're under the daily recommended intake of caffeine. Great job!")
     else:
         print("You're over the daily recommended intake of caffeine.  Please consider drinking less caffeine.")
