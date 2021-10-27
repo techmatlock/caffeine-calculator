@@ -32,7 +32,7 @@ def get_amount(prompt):
 
 def main():
     fda_total = 400 # Recommended FDA daily intake of caffeine in milligrams (mg)
-    if drink[0] * amt < fda_total:
+    if drink * amt < fda_total:
         print("You're under the daily recommended intake of caffeine. Great job!")
     else:
         print("You're over the daily recommended intake of caffeine.  Please consider drinking less caffeine.")
