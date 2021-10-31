@@ -30,7 +30,7 @@ def get_amount(prompt):
         try:
             amt_drinks = int(input(prompt))
         except ValueError:
-            print("That is not a valid input.  PLease try again")
+            print("That is not a valid input.  PLease try again.")
             continue
         return amt_drinks
 
