@@ -7,8 +7,7 @@ def get_drinks(prompt):
     
     total_caffeine = 0
     name = ''
-    value = None
-    while not isinstance(value, int):
+    while True:
         try:
             value = int(input(prompt))
         except ValueError:
